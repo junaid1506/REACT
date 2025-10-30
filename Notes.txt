@@ -4,3 +4,7 @@
 - Used to create single page application (SPA)
 - React has a simpler mental model JS is Error-prone
 - JS is Hard to maintain
+- In React no need to worry about querying and updating DOM  
+- React creates a web page withsmall and reusable component 
+- React will take care of creating and updating DOM element 
+- It saves a lot of time,cheezein aasan hai, pahele se likhi hui hai 
