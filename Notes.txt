@@ -1,4 +1,6 @@
 - JavaScript library to build dyanamic and interactive user interfaces 
 - Developed at facebook in 2011
 - Currently most widely used JS library for front-end development.
-- Used to create single page application (SPA) 
+- Used to create single page application (SPA)
+- React has a simpler mental model JS is Error-prone
+- JS is Hard to maintain
