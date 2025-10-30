@@ -1,5 +1,4 @@
 - JavaScript library to build dyanamic and interactive user interfaces 
 - Developed at facebook in 2011
 - Currently most widely used JS library for front-end development.
-- Used to create single page application (SPA)
-- 
+- Used to create single page application (SPA) 
