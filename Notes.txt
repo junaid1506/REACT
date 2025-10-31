@@ -9,3 +9,6 @@
 - React will take care of creating and updating DOM element 
 - It saves a lot of time,cheezein aasan hai, pahele se likhi hui hai 
 - React application is a tree of components with App Component as the root bringing everything together.
+- Vite is a modern tool to create React Project
+- Vite use npmrun dev to launch dev server 
+- Use npm start for cra 
