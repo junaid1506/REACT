@@ -1,0 +1,34 @@
+.heading{
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 25px 10px;
+}
+
+input {
+  width: 100%;
+  /* text-align: center; */
+}
+
+.todocontainer{
+  display: flex;
+  margin-left: 10%;
+  width: 80%;
+  /* background-color: red; */
+  /* align-items: space-betweens; */
+  /* justify-content: center; */
+  flex-direction: column;
+}
+.center{
+  margin: auto;
+  /* background-color: blue; */
+  text-align: left !important;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* align-items: space-between; */
+}
+
+button{
+  width: 257px;
+}
