@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 
 function App() {
-  let foodItems = ['Daal','Green Vegetables','Roti','Salad','Milk']
+  let foodItems = ['Daal','Green Vegetables','Roti','Salad','Milk', 'Ghee']
   return (
     <React.Fragment>
     <h1>Healthy Food</h1>
