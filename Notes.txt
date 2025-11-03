@@ -12,3 +12,6 @@
 - Vite is a modern tool to create React Project
 - Vite use npmrun dev to launch dev server 
 - Use npm start for cra(create react app) 
+- JSX determines how the UI will look wherever th component is used 
+- NOT HTML throungh it ressemble  
+- There are 3 types of export default export, multiple name export and mixed name and default export 
