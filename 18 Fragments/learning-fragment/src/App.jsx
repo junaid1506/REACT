@@ -17,8 +17,8 @@ function App() {
   return (
     <React.Fragment>
       <h1>Healthy Food</h1>
-      <ErrorMsg items= {foodItems}/>
-      <AllItems items= {foodItems}/>
+      <ErrorMsg items={foodItems} />
+      <AllItems items={foodItems} />
     </React.Fragment>
   );
 
