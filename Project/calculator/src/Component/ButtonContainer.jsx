@@ -10,12 +10,12 @@ const ButtonContainer = ({ calculatorButtons }) => {
           // Example: decide class dynamically
           let btnClass = "button";
 
-          if (["+", "-", "*", "/"].includes(btn)) {
-            btnClass = "operatorButton";
+          if (["+", "−", "×", "%", "÷","()"].includes(btn)) {
+            btnClass = "operator";
           } else if (btn === "C") {
-            btnClass = "clearButton";
+            btnClass = "clear";
           } else if (btn === "=") {
-            btnClass = "equalButton";
+            btnClass = "equal";
           }
 
           console.log(btnClass)

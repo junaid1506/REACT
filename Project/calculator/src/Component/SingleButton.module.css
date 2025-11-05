@@ -21,7 +21,7 @@
   transform: scale(0.95);
 }
 
-.button.operator {
+.button .operator {
   background: linear-gradient(145deg, #ff9500, #e07b00);
   color: #fff;
 }
