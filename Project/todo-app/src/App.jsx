@@ -10,7 +10,7 @@ function App() {
       todoDate: "04/10/2023",
     },
     {
-      todoName: "Go to College",
+      todoName: "Go to School",
       todoDate: "04/10/2023",
     },
     {
