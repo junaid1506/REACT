@@ -1,19 +1,21 @@
 import styles from './App.module.css'
+import ButtonContainer from './Component/ButtonContainer'
+import Display from './Component/Display'
 
 function App() {
+  const calculatorButtons = [
+  "C", "()", "%", "÷",
+  "7", "8", "9", "×",
+  "4", "5", "6", "−",
+  "1", "2", "3", "+",
+  "0", ".", "="
+];
+
   return (
     <>
     <div className={styles.calculator}>
-      <input className={styles.display} type="text" />
-      <div className={styles.buttonContainer}>
-        <button className={styles.button}>C</button>
-        <button className={styles.button}>C</button>
-        <button className={styles.button}>C</button>
-        <button className={styles.button}>C</button>
-        <button className={styles.button}>C</button>
-        <button className={styles.button}>C</button>
-        <button className={styles.button}>C</button>
-      </div>
+      <Display/>
+      <ButtonContainer calculatorButtons={calculatorButtons} />
     </div>
     </>
   )
