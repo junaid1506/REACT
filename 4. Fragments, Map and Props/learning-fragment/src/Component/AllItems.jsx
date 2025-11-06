@@ -7,7 +7,10 @@ const AllItems = ({items}) => {
         {items.map((item) => (
          <Items key={item} singleItem = {item}/>
         ))}
+        
       </ul>
+      
+
     </>
   );
 };
