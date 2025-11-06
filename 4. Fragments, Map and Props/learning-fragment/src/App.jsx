@@ -3,6 +3,7 @@ import React from "react";
 import ErrorMsg from "./Component/ErrorMsg";
 import AllItems from "./Component/AllItems";
 import Container from "./Component/Container";
+import FoodInput from "./Component/FoodInput";
 
 function App() {
   let foodItems = [
@@ -118,6 +119,7 @@ function App() {
     <Container>
       <h1 className="heading">Healthy Food</h1>
       <ErrorMsg items={foodItems} />
+      <FoodInput/>
       <AllItems items={foodItems} />
     </Container>
 
