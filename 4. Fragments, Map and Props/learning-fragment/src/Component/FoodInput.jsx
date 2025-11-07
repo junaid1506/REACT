@@ -1,10 +1,8 @@
 import React from "react";
 import styles from "./FoodInput.module.css";
 
-const FoodInput = () => {
-  const handleOnChange = (e) => {
-    console.log(e.target.value);
-  };
+const FoodInput = ({handleOnChange}) => {
+ 
   return (
     <>
       <div className="input-group mb-3">

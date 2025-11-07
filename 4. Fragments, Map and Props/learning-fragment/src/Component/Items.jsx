@@ -1,7 +1,5 @@
-const Items = ({ singleItem }) => {
-  const clickedHandle = () => {
-    alert(`${singleItem} is add to the beg.`);
-  };
+const Items = ({ singleItem, clickedHandle }) => {
+
 
   return (
     <li className="list-group-item  flex">

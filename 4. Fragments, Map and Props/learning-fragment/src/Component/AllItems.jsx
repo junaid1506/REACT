@@ -1,16 +1,19 @@
 import Items from "./Items";
 
-const AllItems = ({items}) => {
+const AllItems = ({ items }) => {
   return (
     <>
       <ul className="list-group">
         {items.map((item) => (
-         <Items key={item} singleItem = {item}/>
+          <Items
+            key={item}
+            singleItem={item}
+            clickedHandle={() => {
+              alert(`${item} is add to the beg.`);
+            }}
+          />
         ))}
-        
       </ul>
-      
-
     </>
   );
 };

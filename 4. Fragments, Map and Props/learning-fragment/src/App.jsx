@@ -114,12 +114,19 @@ function App() {
 // ];
 
   // let foodItems = []
+
+   const handleOnChange = (e) => {
+    console.log(e.target.value);
+  };
+
+
+
   return (
     <>
     <Container>
       <h1 className="heading">Healthy Food</h1>
       <ErrorMsg items={foodItems} />
-      <FoodInput/>
+      <FoodInput handleOnChange={handleOnChange}/>
       <AllItems items={foodItems} />
     </Container>
 
