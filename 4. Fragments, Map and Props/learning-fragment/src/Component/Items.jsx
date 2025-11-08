@@ -1,6 +1,4 @@
 const Items = ({ singleItem, clickedHandle }) => {
-
-
   return (
     <li className="list-group-item  flex">
       {singleItem}

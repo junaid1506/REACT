@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./FoodInput.module.css";
 
-const FoodInput = ({handleOnKeyDown}) => {
- 
+const FoodInput = ({ handleOnKeyDown }) => {
   return (
     <>
       <div className="input-group mb-3">
@@ -14,7 +13,6 @@ const FoodInput = ({handleOnKeyDown}) => {
           aria-label="Enter Food Item Here"
           aria-describedby="basic-addon2"
         />
-        
       </div>
       {/* <input classNameName={styles.input} type="text" placeholder='Enter' /> */}
     </>

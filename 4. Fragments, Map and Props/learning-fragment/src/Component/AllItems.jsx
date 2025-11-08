@@ -1,7 +1,6 @@
 import Items from "./Items";
 
-const AllItems = ({ items ,isActive, setIsActive }) => {
-  
+const AllItems = ({ items, isActive, setIsActive }) => {
   return (
     <>
       <ul className="list-group">
@@ -9,12 +8,11 @@ const AllItems = ({ items ,isActive, setIsActive }) => {
           <Items
             key={item}
             singleItem={item}
-            
             clickedHandle={() => {
               // alert(`${item} is bought.`)
-              setIsActive(isActive ? '' : 'active')
+              setIsActive(isActive ? "" : "active");
             }}
-            isActive= {isActive}
+            isActive={isActive}
           />
         ))}
       </ul>

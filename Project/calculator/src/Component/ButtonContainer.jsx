@@ -10,7 +10,7 @@ const ButtonContainer = ({ calculatorButtons }) => {
           // Example: decide class dynamically
           let btnClass = "button";
 
-          if (["+", "−", "×", "%", "÷","()"].includes(btn)) {
+          if (["+", "−", "×", "%", "÷", "()"].includes(btn)) {
             btnClass = "operator";
           } else if (btn === "C") {
             btnClass = "clear";
@@ -18,8 +18,8 @@ const ButtonContainer = ({ calculatorButtons }) => {
             btnClass = "equal";
           }
 
-          console.log(btnClass)
-         return <SigleButton btnClass={btnClass} key={btn} btn={btn} />;
+          console.log(btnClass);
+          return <SigleButton btnClass={btnClass} key={btn} btn={btn} />;
         })}
       </div>
     </>
