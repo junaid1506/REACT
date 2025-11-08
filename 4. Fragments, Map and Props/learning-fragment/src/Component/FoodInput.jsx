@@ -1,22 +1,20 @@
 import React from "react";
 import styles from "./FoodInput.module.css";
 
-const FoodInput = ({handleOnChange}) => {
+const FoodInput = ({handleOnKeyDown}) => {
  
   return (
     <>
       <div className="input-group mb-3">
         <input
-          onChange={handleOnChange}
+          onKeyDown={handleOnKeyDown}
           type="text"
           className="form-control"
-          placeholder="Recipient’s username"
-          aria-label="Recipient’s username"
+          placeholder="Enter Food Item Here"
+          aria-label="Enter Food Item Here"
           aria-describedby="basic-addon2"
         />
-        <button className="input-group-text" id="basic-addon2">
-          Search 🔎{" "}
-        </button>
+        
       </div>
       {/* <input classNameName={styles.input} type="text" placeholder='Enter' /> */}
     </>

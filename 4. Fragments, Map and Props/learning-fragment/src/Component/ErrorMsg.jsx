@@ -1,5 +1,5 @@
 const ErrorMsg = ({items}) => {
-  return <>{items.length === 0 ? <h3>I am still hungery</h3> : null}</>;
+  return <>{items.length === 0 ? <h3 style={{textAlign:"center"}}>Your Item list is empty</h3> : null}</>;
 };
 
 export default ErrorMsg;
