@@ -9,7 +9,7 @@ const AllItems = ({ items }) => {
             key={item}
             singleItem={item}
             clickedHandle={() => {
-              alert(`${item} is add to the beg.`);
+              alert(`${item} is bought.`);
             }}
           />
         ))}

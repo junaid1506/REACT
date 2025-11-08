@@ -5,7 +5,7 @@ const Items = ({ singleItem, clickedHandle }) => {
     <li className="list-group-item  flex">
       {singleItem}
       <button type="button" className="btn btn-info" onClick={clickedHandle}>
-        Add +{" "}
+        Buy
       </button>
     </li>
   );
