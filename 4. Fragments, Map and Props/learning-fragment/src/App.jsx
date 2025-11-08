@@ -9,7 +9,7 @@ function App() {
   let foodItems = [
     "Chicken",
     "Vegetables",
-    "Roti",
+    "Roti",,
     "Salad",
     "Milk",
     "Ghee",
@@ -141,7 +141,7 @@ function App() {
         {foodItems2.map((item) => (
           <li className="list-group-item">{item}</li>
         ))}
-      </ul>
+      </ul>,,,,,,,,,,,,,,,,,,,,,
     </Container> */}
     </>
   );
