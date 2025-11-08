@@ -1,6 +1,12 @@
+import { useState } from "react";
 import Items from "./Items";
 
-const AllItems = ({ items, isActive, setIsActive }) => {
+const AllItems = ({ items }) => {
+  let [buyItem, setBuyItem] = useState([]);
+  const handleActive = (item, e) => {
+    setBuyItem([...buyItem, item]);
+  };
+
   return (
     <>
       <ul className="list-group">
@@ -8,11 +14,8 @@ const AllItems = ({ items, isActive, setIsActive }) => {
           <Items
             key={item}
             singleItem={item}
-            clickedHandle={() => {
-              // alert(`${item} is bought.`)
-              setIsActive(isActive ? "" : "active");
-            }}
-            isActive={isActive}
+            bought={buyItem.includes(item)}
+            clickedHandle={(e) => handleActive(item, e)}
           />
         ))}
       </ul>

@@ -7,11 +7,10 @@ import FoodInput from "./Component/FoodInput";
 
 function App() {
   let [foodItems, setFoodItems] = useState([]);
-  let [isActive, setIsActive] = useState("");
   const keyDown = (e) => {
     if (e.key === "Enter") {
       let foodItem = e.target.value;
-      e.target.value = "";
+      e.target.value = ''
       let newItems = [...foodItems, foodItem];
       setFoodItems(newItems);
     }
@@ -26,11 +25,7 @@ function App() {
         <h1 className="heading">Healthy Food</h1>
         <FoodInput handleOnKeyDown={keyDown} />
         <ErrorMsg items={foodItems} />
-        <AllItems
-          items={foodItems}
-          isActive={isActive}
-          setIsActive={setIsActive}
-        />
+        <AllItems items={foodItems} />
       </Container>
 
       {/* <Container>

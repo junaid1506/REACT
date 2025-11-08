@@ -1,9 +1,9 @@
-const Items = ({ singleItem, clickedHandle }) => {
+const Items = ({ singleItem, clickedHandle, bought }) => {
   return (
-    <li className="list-group-item  flex">
+    <li className={`list-group-item  flex ${bought ? 'active' : ''}`}>
       {singleItem}
-      <button type="button" className="btn btn-info" onClick={clickedHandle}>
-        Buy
+      <button type="button" className="btn btn-success" onClick={clickedHandle}>
+      {bought ? 'Bought' : "Buy"}
       </button>
     </li>
   );
