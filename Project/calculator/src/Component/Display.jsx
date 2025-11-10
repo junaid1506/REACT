@@ -2,9 +2,14 @@
 import styles from './Display.module.css'
 
 
-const Display = () => {
+const Display = ({display }) => {
+
+
   return (
-    <input className={styles.display} type="text" />
+    // <div class={`overflow-x-auto ${styles.display}`}>{display}</div>
+    <input className={styles.display} value= {display}  placeholder='Enter Your Digit' readOnly/>
+     
+   
   )
 }
 

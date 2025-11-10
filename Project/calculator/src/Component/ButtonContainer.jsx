@@ -2,7 +2,17 @@
 import styles from "./ButtonContainer.module.css";
 import SigleButton from "./SigleButton";
 
-const ButtonContainer = ({ calculatorButtons }) => {
+const ButtonContainer = ({ clickHandler }) => {
+
+    const calculatorButtons = [
+  "C", "()", "%", "÷",
+  "7", "8", "9", "×",
+  "4", "5", "6", "−",
+  "1", "2", "3", "+",
+  "0", ".", "="
+];
+
+
   return (
     <>
       <div className={styles.buttonContainer}>
@@ -18,8 +28,8 @@ const ButtonContainer = ({ calculatorButtons }) => {
             btnClass = "equal";
           }
 
-          console.log(btnClass);
-          return <SigleButton btnClass={btnClass} key={btn} btn={btn} />;
+          // console.log(btnClass);
+          return <SigleButton clickHandler={(e)=>clickHandler(e, btn)}  btnClass={btnClass} key={btn} btn={btn} />;
         })}
       </div>
     </>

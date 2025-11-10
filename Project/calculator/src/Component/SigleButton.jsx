@@ -1,10 +1,10 @@
 // import React from 'react'
 import styles from "./SingleButton.module.css";
-const SigleButton = ({ btn, btnClass }) => {
+const SigleButton = ({ btn, btnClass, clickHandler }) => {
   return (
     <>
-      <button className={`${styles.button} ${styles[btnClass]}`}>{btn}</button>
-      {console.log(btnClass)}
+      <button onClick={clickHandler} className={`${styles.button} ${styles[btnClass]}`}>{btn}</button>
+      {/* {console.log(btnClass)} */}
     </>
   );
 };
