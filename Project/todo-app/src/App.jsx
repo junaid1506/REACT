@@ -2,9 +2,10 @@ import AppName from "./Component/AppName";
 import EnterTodo from "./Component/EnterTodo";
 import "./App.css";
 import TodoMaping from "./Component/TodoMaping";
+import { useState } from "react";
 
 function App() {
-  const todoItems = [
+  const [todoItems, setTodoItems] = useState([
     {
       todoName: "Buy Milk",
       todoDate: "04/10/2023",
@@ -25,27 +26,7 @@ function App() {
       todoName: "Go to Gym",
       todoDate: "06/10/2023",
     },
-    {
-      todoName: "Finish Client Project",
-      todoDate: "06/10/2023",
-    },
-    {
-      todoName: "Pay Electricity Bill",
-      todoDate: "07/10/2023",
-    },
-    {
-      todoName: "Read 20 Pages of Book",
-      todoDate: "07/10/2023",
-    },
-    {
-      todoName: "Meet College Friends",
-      todoDate: "08/10/2023",
-    },
-    {
-      todoName: "Clean the Room",
-      todoDate: "08/10/2023",
-    },
-  ];
+  ]);
 
   return (
     <>
@@ -53,7 +34,7 @@ function App() {
         <AppName />
         <div className="center">
           <EnterTodo />
-          <TodoMaping todoItems={todoItems}/>
+          <TodoMaping todoItems={todoItems} />
         </div>
       </center>
     </>
