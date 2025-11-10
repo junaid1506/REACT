@@ -4,9 +4,9 @@ import ButtonContainer from "./Component/ButtonContainer";
 import Display from "./Component/Display";
 
 function App() {
-  let [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState("");
 
-  let clickHandler = (e, btn) => {
+  const clickHandler = (e, btn) => {
     if (btn === "C") {
       setDisplay("");
     } else if (btn === "=") {
