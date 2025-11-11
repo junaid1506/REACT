@@ -5,6 +5,8 @@ import TodoMaping from "./Component/TodoMaping";
 import { useState } from "react";
 
 function App() {
+  let [enterName, setEnterName] = useState("");
+  let [enterDate, setEnterDate] = useState("");
   const [todoItems, setTodoItems] = useState([
     {
       todoName: "Buy Milk",
@@ -28,12 +30,21 @@ function App() {
     },
   ]);
 
+  const handelSubmit = () => {
+    console.log("I am clicked");
+  };
+
   return (
     <>
       <center className="todocontainer">
         <AppName />
         <div className="center">
-          <EnterTodo />
+          <EnterTodo
+            enterName={enterName}
+            enterDate={enterDate}
+            setEnterName={setEnterName}
+            setEnterDate={setEnterDate}
+          />
           <TodoMaping todoItems={todoItems} />
         </div>
       </center>

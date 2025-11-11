@@ -1,4 +1,6 @@
-function EnterTodo(){
+import { useState } from "react";
+
+function EnterTodo({enterDate,enterName}){
   return(
     <>
      <div className="row">
