@@ -1,14 +1,18 @@
 import MainTodo from "./MainTodo";
 
-const TodoMaping = ({todoItems}) => {
+const TodoMaping = ({todoItems, setTodoItems }) => {
   return (
     <>
       {todoItems.map((todo) => (
         <>
           <MainTodo
-            key={todo.todoName}
+            key={Math.random()} 
             todoName={todo.todoName}
             todoDate={todo.todoDate}
+            handleDelete={()=>{
+              let newTodo = todoItems.filter(()=>todo)
+              setTodoItems(newTodo)
+            }}
           />
         </>
       ))}
