@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { IoAddCircleOutline } from "react-icons/io5";
+
 
 function EnterTodo({todoItems, setTodoItems}) {
   let [enterName, setEnterName] = useState("");
@@ -45,7 +47,8 @@ function EnterTodo({todoItems, setTodoItems}) {
             type="button"
             className="btn btn-success"
           >
-            Add
+          <IoAddCircleOutline />
+
           </button>
         </div>
       </div>
