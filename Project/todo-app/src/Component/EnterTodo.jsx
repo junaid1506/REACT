@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { IoAddCircleOutline } from "react-icons/io5";
 
-
-function EnterTodo({todoItems, setTodoItems}) {
+function EnterTodo({ todoItems, setTodoItems }) {
   let [enterName, setEnterName] = useState("");
   let [enterDate, setEnterDate] = useState("");
 
-  const handelSubmit = () => {
+  const handelSubmit = (e) => {
+    console.log(e);
+    e.preventDefault();
     let newTodo = [
       ...todoItems,
       {
@@ -21,7 +22,7 @@ function EnterTodo({todoItems, setTodoItems}) {
 
   return (
     <>
-      <div className="row">
+      <form onSubmit={handelSubmit} className="row">
         <div className="col-4">
           <input
             type="text"
@@ -42,16 +43,11 @@ function EnterTodo({todoItems, setTodoItems}) {
           />
         </div>
         <div className="col-2">
-          <button
-            onClick={handelSubmit}
-            type="button"
-            className="btn btn-success"
-          >
-          <IoAddCircleOutline />
-
+          <button type="submit" className="btn btn-success">
+            <IoAddCircleOutline />
           </button>
         </div>
-      </div>
+      </form>
     </>
   );
 }
