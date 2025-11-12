@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IoAddCircleOutline } from "react-icons/io5";
 
 function EnterTodo({ todoItems, setTodoItems }) {
-  let [enterName, setEnterName] = useState("");
-  let [enterDate, setEnterDate] = useState("");
-
+  // let [enterName, setEnterName] = useState("");
+  // let [enterDate, setEnterDate] = useState("");  
+  let enterNameElement =  useRef()
+  let enterDateElement = useRef()
   const handelSubmit = (e) => {
-    console.log(e);
     e.preventDefault();
     let newTodo = [
       ...todoItems,
@@ -25,21 +25,23 @@ function EnterTodo({ todoItems, setTodoItems }) {
       <form onSubmit={handelSubmit} className="row">
         <div className="col-4">
           <input
+            ref={enterNameElement}
             type="text"
-            value={enterName}
+            // value={enterName}
             placeholder="Enter todo here"
-            onChange={(e) => {
-              setEnterName(e.target.value);
-            }}
+            // onChange={(e) => {
+            //   setEnterName(e.target.value);
+            // }}
           />
         </div>
         <div className="col-4">
           <input
+          ref={enterDateElement}
             type="date"
-            value={enterDate}
-            onChange={(e) => {
-              setEnterDate(e.target.value);
-            }}
+            // value={enterDate}
+            // onChange={(e) => {
+            //   setEnterDate(e.target.value);
+            // }}
           />
         </div>
         <div className="col-2">
