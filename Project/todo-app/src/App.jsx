@@ -4,11 +4,13 @@ import "./App.css";
 import TodoMaping from "./Component/TodoMaping";
 import { useState } from "react";
 import WelcomeMsg from "./Component/WelcomeMsg";
+import { TodoItemsContext } from "./Store/todo-items-store";
 
 function App() {
   const [todoItems, setTodoItems] = useState([]);
   return (
-    <>
+    <>  
+      <TodoItemsContext.Provider>
       <center className="todocontainer">
         <AppName />
         <div className="center">
@@ -17,6 +19,7 @@ function App() {
           <TodoMaping todoItems={todoItems} setTodoItems={setTodoItems} />
         </div>
       </center>
+      </TodoItemsContext.Provider>
     </>
   );
 }
