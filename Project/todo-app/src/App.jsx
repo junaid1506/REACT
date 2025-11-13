@@ -8,17 +8,21 @@ import { TodoItemsContext } from "./Store/todo-items-store";
 
 function App() {
   const [todoItems, setTodoItems] = useState([]);
+  const deleteTodo = (todoName) => {
+    const newTodo = todoItems.filter((item) => item.todoName !== todoName);
+    setTodoItems(newTodo);
+  };
   return (
-    <>  
-      <TodoItemsContext.Provider>
-      <center className="todocontainer">
-        <AppName />
-        <div className="center">
-          <EnterTodo setTodoItems={setTodoItems} todoItems={todoItems} />
-          {todoItems.length > 0 ? "" : <WelcomeMsg />}
-          <TodoMaping todoItems={todoItems} setTodoItems={setTodoItems} />
-        </div>
-      </center>
+    <>
+      <TodoItemsContext.Provider value={todoItems}>
+        <center className="todocontainer">
+          <AppName />
+          <div className="center">
+            <EnterTodo setTodoItems={setTodoItems} todoItems={todoItems} />
+            {todoItems.length > 0 ? "" : <WelcomeMsg />}
+            <TodoMaping deleteTodo={deleteTodo} />
+          </div>
+        </center>
       </TodoItemsContext.Provider>
     </>
   );

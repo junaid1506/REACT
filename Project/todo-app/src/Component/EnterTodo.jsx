@@ -1,9 +1,11 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { IoAddCircleOutline } from "react-icons/io5";
+import { TodoItemsContext } from "../Store/todo-items-store";
 
-function EnterTodo({ todoItems, setTodoItems }) {
+function EnterTodo({ setTodoItems }) {
   // let [enterName, setEnterName] = useState("");
   // let [enterDate, setEnterDate] = useState("");  
+    const todoItems = useContext(TodoItemsContext)
   let enterNameElement =  useRef()
   let enterDateElement = useRef()
   const handelSubmit = (e) => {

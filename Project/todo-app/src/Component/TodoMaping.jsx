@@ -1,16 +1,17 @@
+import { useContext } from "react";
 import MainTodo from "./MainTodo";
+import { TodoItemsContext } from "../Store/todo-items-store";
 
-const TodoMaping = ({todoItems ,setTodoItems }) => {
-  const deleteTodo = (todoName)=>{
-    const newTodo = todoItems.filter(item => item.todoName !== todoName);
-    setTodoItems(newTodo)
-  }
+const TodoMaping = ({ deleteTodo }) => {
+
+  const todoItems = useContext(TodoItemsContext)
+
   return (
     <>
       {todoItems.map((todo) => (
         <>
           <MainTodo
-            key={todo.todoName} 
+            key={todo.todoName}
             todoName={todo.todoName}
             todoDate={todo.todoDate}
             handleDelete={deleteTodo}
@@ -21,4 +22,4 @@ const TodoMaping = ({todoItems ,setTodoItems }) => {
   );
 };
 
-export default TodoMaping
+export default TodoMaping;
