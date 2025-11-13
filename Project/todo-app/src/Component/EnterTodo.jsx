@@ -11,13 +11,13 @@ function EnterTodo({ todoItems, setTodoItems }) {
     let newTodo = [
       ...todoItems,
       {
-        todoName: enterName,
-        todoDate: enterDate,
+        todoName: enterNameElement.current.value,
+        todoDate: enterDateElement.current.value,
       },
     ];
     setTodoItems(newTodo);
-    setEnterDate("");
-    setEnterName("");
+    enterNameElement.current.value = ''
+    enterDateElement.current.value = ''
   };
 
   return (
