@@ -14,13 +14,15 @@ function App() {
   };
   return (
     <>
-      <TodoItemsContext.Provider value={todoItems}>
+      <TodoItemsContext.Provider
+        value={{ todoItems: todoItems, deleteTodo: deleteTodo }}
+      >
         <center className="todocontainer">
           <AppName />
           <div className="center">
-            <EnterTodo setTodoItems={setTodoItems} todoItems={todoItems} />
-            {todoItems.length > 0 ? "" : <WelcomeMsg />}
-            <TodoMaping deleteTodo={deleteTodo} />
+            <EnterTodo setTodoItems={setTodoItems}/>
+            <WelcomeMsg />
+            <TodoMaping />
           </div>
         </center>
       </TodoItemsContext.Provider>

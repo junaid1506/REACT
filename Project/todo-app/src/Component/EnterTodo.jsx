@@ -4,10 +4,10 @@ import { TodoItemsContext } from "../Store/todo-items-store";
 
 function EnterTodo({ setTodoItems }) {
   // let [enterName, setEnterName] = useState("");
-  // let [enterDate, setEnterDate] = useState("");  
-    const todoItems = useContext(TodoItemsContext)
-  let enterNameElement =  useRef()
-  let enterDateElement = useRef()
+  // let [enterDate, setEnterDate] = useState("");
+  const {todoItems} = useContext(TodoItemsContext);
+  let enterNameElement = useRef();
+  let enterDateElement = useRef();
   const handelSubmit = (e) => {
     e.preventDefault();
     let newTodo = [
@@ -18,8 +18,8 @@ function EnterTodo({ setTodoItems }) {
       },
     ];
     setTodoItems(newTodo);
-    enterNameElement.current.value = ''
-    enterDateElement.current.value = ''
+    enterNameElement.current.value = "";
+    enterDateElement.current.value = "";
   };
 
   return (
@@ -38,7 +38,7 @@ function EnterTodo({ setTodoItems }) {
         </div>
         <div className="col-4">
           <input
-          ref={enterDateElement}
+            ref={enterDateElement}
             type="date"
             // value={enterDate}
             // onChange={(e) => {

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoItemsContext } from '../Store/todo-items-store'
 
 const WelcomeMsg = () => {
+ const {todoItems} =  useContext(TodoItemsContext)
   return (
-    <p className='wlcmMsg'>There is no task. Enjoy your day</p>
+    
+    todoItems.length > 0 ? "" : <p className='wlcmMsg'>There is no task. Enjoy your day</p>
   )
 }
 
