@@ -13,7 +13,7 @@ function App() {
       e.target.value = ''
       let newItems = [...foodItems, foodItem];
       setFoodItems(newItems);
-    }
+    } 
   };
   // const myState = useState();
   // let textValue = myState[0];
