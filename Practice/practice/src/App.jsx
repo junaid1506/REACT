@@ -1,19 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const previousCount = useRef(0);
+  const inputRef = useRef();
 
   useEffect(() => {
-    previousCount.current = count;
-  }, [count]);
+    inputRef.current.focus();
+  }, []);
 
-  return (
-    <>
-      <h2>Current: {count}</h2>
-      <h3>Previous: {previousCount.current}</h3>
-      <button onClick={() => setCount(count + 1)}>Increase</button>
-    </>
-  );
+  return <input ref={inputRef} placeholder="Search..." />;
 }
 export default App;
