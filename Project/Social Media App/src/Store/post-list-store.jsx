@@ -6,12 +6,14 @@ const PostList = createContext({
   deletePost: () => {},
 });
 
-const postReducer = (state, action) => {
+const postListReducer = (state, action) => {
   return state;
 };
 
-const PostListProvide = (children) => {
-  const [postList, dispatchPostList] = useReducer([], postReducer);
+const PostListProvide = ({children}) => {
+  const [postList, dispatchPostList] = useReducer(
+    postListReducer, []
+  );
   let addPost = () => {};
   let deletePost = () => {};
 
