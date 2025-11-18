@@ -1,9 +1,6 @@
 .app-container{
   display: flex;
 }
-.content{
-  width: 100%;
-}
 .sidebar{
   min-height: 100vh;
 }
