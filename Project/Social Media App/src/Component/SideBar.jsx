@@ -1,6 +1,12 @@
 import React from "react";
 
-const SideBar = ({currentNav, NavHome,  NavCreatePost}) => {
+const SideBar = ({ currentNav, setCurrentNav }) => {
+  let NavHome = () => {
+    setCurrentNav("Home");
+  };
+  let NavCreatePost = () => {
+    setCurrentNav("Current Post");
+  };
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
@@ -12,8 +18,13 @@ const SideBar = ({currentNav, NavHome,  NavCreatePost}) => {
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
       >
         {" "}
-        <svg className="bi pe-none me-2" width="40" height="32" aria-hidden="true">
-          <use xlink:Href="#bootstrap"></use>
+        <svg
+          className="bi pe-none me-2"
+          width="40"
+          height="32"
+          aria-hidden="true"
+        >
+          <use xlinkHref="#bootstrap"></use>
         </svg>{" "}
         <span className="fs-4">Sidebar</span>{" "}
       </a>{" "}
@@ -22,7 +33,14 @@ const SideBar = ({currentNav, NavHome,  NavCreatePost}) => {
         {" "}
         <li className="nav-item">
           {" "}
-          <a onClick={NavHome} href="#" className={`nav-link text-white ${currentNav === 'Home' && 'active'}`} aria-current="page">
+          <a
+            onClick={NavHome}
+            href="#"
+            className={`nav-link text-white ${
+              currentNav === "Home" && "active"
+            }`}
+            aria-current="page"
+          >
             {" "}
             <svg
               className="bi pe-none me-2"
@@ -30,14 +48,20 @@ const SideBar = ({currentNav, NavHome,  NavCreatePost}) => {
               height="16"
               aria-hidden="true"
             >
-              <use xlink:Href="#home"></use>
+              <use xlinkHref="#home"></use>
             </svg>
             Home
           </a>{" "}
         </li>{" "}
         <li>
           {" "}
-          <a onClick={NavCreatePost} href="#" className={`nav-link text-white ${currentNav === 'Current Post' && 'active'}`}>
+          <a
+            onClick={NavCreatePost}
+            href="#"
+            className={`nav-link text-white ${
+              currentNav === "Current Post" && "active"
+            }`}
+          >
             {" "}
             <svg
               className="bi pe-none me-2"
@@ -45,7 +69,7 @@ const SideBar = ({currentNav, NavHome,  NavCreatePost}) => {
               height="16"
               aria-hidden="true"
             >
-              <use xlink:Href="#speedometer2"></use>
+              <use xlinkHref="#speedometer2"></use>
             </svg>
             Create Post
           </a>{" "}
