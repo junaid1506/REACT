@@ -1,6 +1,6 @@
 import React from "react";
 
-const SideBar = () => {
+const SideBar = ({currentNav, NavHome,  NavCreatePost}) => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
@@ -22,7 +22,7 @@ const SideBar = () => {
         {" "}
         <li className="nav-item">
           {" "}
-          <a href="#" className="nav-link active" aria-current="page">
+          <a onClick={NavHome} href="#" className={`nav-link text-white ${currentNav === 'Home' && 'active'}`} aria-current="page">
             {" "}
             <svg
               className="bi pe-none me-2"
@@ -37,7 +37,7 @@ const SideBar = () => {
         </li>{" "}
         <li>
           {" "}
-          <a href="#" className="nav-link text-white">
+          <a onClick={NavCreatePost} href="#" className={`nav-link text-white ${currentNav === 'Current Post' && 'active'}`}>
             {" "}
             <svg
               className="bi pe-none me-2"

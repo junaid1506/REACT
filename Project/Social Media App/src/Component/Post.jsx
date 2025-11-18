@@ -2,7 +2,7 @@ import React from "react";
 
 const Post = () => {
   return (
-    <div class="card" style={{width: "18rem;"}}>
+    <div class="card" style={{width: "18rem"}}>
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">
