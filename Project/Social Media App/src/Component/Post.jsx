@@ -1,17 +1,23 @@
 import React from "react";
-
-const Post = () => {
+import './Post.css'
+const Post = ({item}) => {
   return (
-    <div className="card" style={{width: "18rem"}}>
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card’s content.
-        </p>
-        <a href="#" className="btn btn-primary">
-          Go somewhere
-        </a>
+     <div className="post-card">
+      <div className="post-body">
+        <h5 className="post-title">{item.title}</h5>
+        <p className="post-text">{item.body}</p>
+
+        <div className="post-meta">
+          <span className="likes">{item.reactions} ❤</span>
+          <span className="tags">Tags: {item.tags}</span>
+        </div>
+
+        <div className="post-buttons">
+          <button className="btn-primary">Go somewhere</button>
+          <button className="btn-hide" onClick={() => setHide(true)}>
+            Hide Post
+          </button>
+        </div>
       </div>
     </div>
   );

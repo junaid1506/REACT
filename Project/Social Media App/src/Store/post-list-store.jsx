@@ -43,7 +43,7 @@ const PRODUCT_LIST_DEMO = [
   },
 ];
 
-const PostList = createContext({
+export const PostList = createContext({
   postList: [],
   addPost: () => {},
   deletePost: () => {},
