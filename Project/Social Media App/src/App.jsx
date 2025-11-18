@@ -16,7 +16,9 @@ function App() {
       <SideBar currentNav={currentNav} setCurrentNav={setCurrentNav}    />
       <div className="content">
         <Header />
+        <div className="main-content">
       {currentNav === 'Home' ? <PostList /> :  <InputPost />}
+      </div>
         <Footer />
       </div>
     </div>
