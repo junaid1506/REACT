@@ -11,7 +11,18 @@ const MyProductListData = createContext(
 
 const  myReducer  = (state, action)=>{
   let newState = state
-  newState =  state.filter(item=>item !== action.payload)
+  if(action.type === "DELETE"){
+    newState =  state.filter(item=>item !== action.payload)
+  }else if(action.type === "ADD_PRODUCT"){
+    newState = [...state, {
+      id:"6",
+      title : action.payload.title,
+      body : action.payload.body,
+      reactions : action.payload.reactions,
+      
+    }]
+  }
+  
   return newState
 }
 
@@ -22,9 +33,14 @@ const MyProductListDataProvider = ({children})=>{
   const [productList ,dispatchProductList]  = useReducer(myReducer, [])
 
 
-  const addProduct = ()=>{
+  const addProduct = (title,body,reactions,userId,tags)=>{
 
-    dispatchProductList()
+    dispatchProductList({
+      type : "ADD_PRODUCT",
+      payload :{
+        title,body,reactions,userId,tags
+      }
+    })
 
   }
   const  deleteProduct= (productID)=>{
