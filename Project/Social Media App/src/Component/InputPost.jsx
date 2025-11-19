@@ -44,7 +44,7 @@ const InputPost = () => {
           Check me out
         </label>
       </div>
-      <button type="submit" className="btn btn-primary"   onClick={()=>addPost(title,)}>
+      <button className="btn btn-primary"   onClick={()=>addPost(title)}>
         Submit
       </button>
     </form>
