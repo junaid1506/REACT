@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { act, createContext, useReducer } from "react";
 
 const MyProductListData = createContext(
   {
@@ -10,7 +10,9 @@ const MyProductListData = createContext(
 
 
 const  myReducer  = (state, action)=>{
-  return state
+  let newState = state
+  newState =  state.filter(item=>item !== action.payload)
+  return newState
 }
 
 
@@ -25,8 +27,13 @@ const MyProductListDataProvider = ({children})=>{
     dispatchProductList()
 
   }
-  const  deleteProduct= ()=>{
-
+  const  deleteProduct= (productID)=>{
+    dispatchProductList({
+      type :"DELETE",
+      payload:{
+        productID
+      }
+    })
   }
 
   return (
