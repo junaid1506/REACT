@@ -1,32 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { PostList } from "../Store/post-list-store";
 
 const InputPost = () => {
 
-  const [title, setTitle] =  useState()
-  const submit = (title, body, reactions, userId, tags) => {
-
-    return title
-
-
-
-
-  };
+  const {addPost}  = useContext(PostList)
+  const [title, setTitle] = useState();
 
   return (
     <form>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">
-         Title 
+          Title
         </label>
         <input
-        onChange={(e)=>setTitle(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           type="email"
           className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
         />
         <div id="emailHelp" className="form-text">
-            Enter the title for your post 
+          Enter the title for your post
         </div>
       </div>
       <div className="mb-3">
@@ -49,7 +44,7 @@ const InputPost = () => {
           Check me out
         </label>
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary"   onClick={()=>addPost(title,)}>
         Submit
       </button>
     </form>
