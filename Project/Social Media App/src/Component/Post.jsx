@@ -13,7 +13,7 @@ const Post = ({item}) => {
         </div>
 
         <div className="post-buttons">
-          <button className="btn-primary">Go somewhere</button>
+         
           <button className="btn-hide" onClick={() => setHide(true)}>
             Hide Post
           </button>

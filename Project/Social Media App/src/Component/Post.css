@@ -1,13 +1,13 @@
 .post-card {
-  width: 20rem;
+  width: 28rem;
   background: #ffffff;
   border-radius: 18px;
   padding: 40px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 20px;
-  min-height: 350px !important;
-  min-width: 35vw !important;
+  min-height: 250px !important;
+  /* min-width: 35vw !important; */
 }
 
 .post-card:hover {

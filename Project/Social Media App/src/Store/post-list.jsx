@@ -1,29 +1,41 @@
 import { createContext, useReducer } from "react";
 
-const ProductList = createContext({
-  productList: [],
-  addProduct: () => {},
-  deleteProduct: () => {},
-});
+const MyProductListData = createContext(
+  {
+    productList : [],
+    addProduct : ()=>{},
+    deleteProduct : ()=>{}
+  }
+)
 
-const productProducer  = (state, action)=>{
+
+const  myReducer  = (state, action)=>{
   return state
 }
 
-const ProductListProvider = (children) => {
-  const [productList, dispatchProductlist] = useReducer([], productProducer);
-  const addProduct = () => {};
-  const deleteProduct = () => {};
+
+const MyProductListDataProvider = ({children})=>{
+
+
+  const [productList ,dispatchProductList]  = useReducer(myReducer, [])
+
+
+  const addProduct = ()=>{
+
+    dispatchProductList()
+
+  }
+  const  deleteProduct= ()=>{
+
+  }
 
   return (
-    <ProductList.Provider
-      value={{
-        productList,
-        addProduct,
-        deleteProduct,
-      }}
-    >
+    <MyProductListData.Provider value={{
+      productList,
+      addProduct,
+      deleteProduct
+    }} >
       {children}
-    </ProductList.Provider>
-  );
-};
+    </MyProductListData.Provider>
+  )
+}
