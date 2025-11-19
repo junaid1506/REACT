@@ -50,13 +50,24 @@ export const PostList = createContext({
 });
 
 const postListReducer = (state, action) => {
-  return state;
+  let newState =  state
+  if(action.type === 'DELETE_POST'){
+    newState =  state.filter(post => post.id !== action.payload.postId)
+  }
+  return newState;
 };
 
 const PostListProvide = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(postListReducer, PRODUCT_LIST_DEMO);
   let addPost = () => {};
-  let deletePost = () => {};
+  let deletePost = (postId) => {
+  dispatchPostList({
+    type :"DELETE_POST",
+    payload:{
+      postId
+    }
+  })
+  };
 
   return (
     <PostList.Provider

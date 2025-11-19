@@ -1,6 +1,11 @@
-import React from "react";
+import React, {  useContext } from "react";
 import './Post.css'
+import { PostList } from "../Store/post-list-store";
+
 const Post = ({item}) => {
+const {deletePost} = useContext(PostList)
+
+
   return (
      <div className="post-card">
       <div className="post-body">
@@ -14,7 +19,7 @@ const Post = ({item}) => {
 
         <div className="post-buttons">
          
-          <button className="btn-hide" onClick={() => setHide(true)}>
+          <button className="btn-hide" onClick={(e)=>deletePost(item.id)}>
             Hide Post
           </button>
         </div>
