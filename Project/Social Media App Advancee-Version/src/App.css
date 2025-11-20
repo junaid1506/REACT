@@ -1,0 +1,15 @@
+.app-container{
+  display: flex;
+}
+.sidebar{
+  min-height: 100vh;
+}
+.content{
+  width: 100%;
+}
+.main-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: center; */
+}
