@@ -6,20 +6,55 @@ const MyProductListData = createContext({
   deleteProduct: () => {},
 });
 
-const myReducer = (state, action) => {
-  let newState = state;
-  if (action.type === "DELETE") {
-    newState = state.filter((item) => item !== action.payload);
-  } else if (action.type === "ADD_PRODUCT") {
-    newState = [
-      ...state,
+const postListReducer = (state, action) => {
+
+switch(action.type){
+  case 'DELETE_POST' : 
+    return newState = state.filter((post) => post.id !== action.payload.postId);
+
+  case 'ADD_PRODUCT'  : 
+     return [
       {
-        id: "6",
+        id: Math.random().toString(36).substring(2, 9),
         title: action.payload.title,
         body: action.payload.body,
         reactions: action.payload.reactions,
+        userId: action.payload.userId,
         tags: action.payload.tags,
       },
+      ...state,
+     ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  let newState = state;
+  if (action.type === "DELETE_POST") {
+    newState = state.filter((post) => post.id !== action.payload.postId);
+  } else if (action.type === "ADD_PRODUCT") {
+    newState = [
+      {
+        id: Math.random().toString(36).substring(2, 9),
+        title: action.payload.title,
+        body: action.payload.body,
+        reactions: action.payload.reactions,
+        userId: action.payload.userId,
+        tags: action.payload.tags,
+      },
+      ...state,
     ];
   }
 
