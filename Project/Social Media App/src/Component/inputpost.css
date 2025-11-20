@@ -1,0 +1,43 @@
+/* FORM CARD */
+.input-post-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 560px;
+  margin: 35px auto;
+  transition: 0.3s ease;
+  width: 100vh !important;
+}
+
+/* GROUP SPACING */
+.input-post-group {
+  margin-bottom: 18px;
+}
+
+/* INPUT FIELD STYLING */
+.input-post-input {
+  border-radius: 10px !important;
+  padding: 11px 14px !important;
+  border: 1px solid #d3d3d3 !important;
+  transition: 0.2s ease !important;
+}
+
+.input-post-input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.35) !important;
+}
+
+/* BUTTON */
+.input-post-btn {
+  width: 100%;
+  padding: 12px !important;
+  font-size: 1.1rem !important;
+  border-radius: 12px !important;
+  margin-top: 8px;
+  transition: background 0.3s ease;
+}
+
+.input-post-btn:hover {
+  background-color: #0b5ed7 !important;
+}

@@ -53,10 +53,18 @@ const postListReducer = (state, action) => {
   let newState =  state
   if(action.type === 'DELETE_POST'){
     newState =  state.filter(post => post.id !== action.payload.postId)
-  }else if(action.type === "ADD_PRODUCT"){
+  }
+  else if(action.type === "ADD_PRODUCT"){
 
 
-    console.log(payload.title)
+    newState =  [...state, {
+      id: Math.random().toString(36).substring(2, 9),
+    title:action.payload.title ,
+    body: action.payload.body,
+    reactions: action.payload.reactions,
+    userId: action.payload.userId,
+    tags: action.payload.tags,
+    }]
   }
 
   return newState;
@@ -64,22 +72,13 @@ const postListReducer = (state, action) => {
 
 const PostListProvide = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(postListReducer, PRODUCT_LIST_DEMO);
-  let addPost = (title) => {
+  let addPost = (title,body,reactions,userId,tags) => {
     dispatchPostList({
       type: "ADD_PRODUCT",
       payload: {
-        title,
-        body,
-        reactions,
-        userId,
-        tags,
+        title,body,reactions,userId,tags 
       },
     });
-
-
-
-
-
   };
   let deletePost = (postId) => {
   dispatchPostList({

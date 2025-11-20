@@ -1,53 +1,80 @@
 import React, { useContext, useState } from "react";
 import { PostList } from "../Store/post-list-store";
+import "./inputpost.css"
 
-const InputPost = () => {
+const InputPost = ({setCurrentNav}) => {
 
   const {addPost}  = useContext(PostList)
-  const [title, setTitle] = useState();
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [reactions, setReactions] = useState("");
+  const [userId, setUserId] = useState("");
+  const [tags, setTags] = useState("");
 
   return (
-    <form>
-      <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">
-          Title
-        </label>
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          type="email"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-        />
-        <div id="emailHelp" className="form-text">
-          Enter the title for your post
-        </div>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleInputPassword1" className="form-label">
-          Password
-        </label>
-        <input
-          type="password"
-          className="form-control"
-          id="exampleInputPassword1"
-        />
-      </div>
-      <div className="mb-3 form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="exampleCheck1"
-        />
-        <label className="form-check-label" htmlFor="exampleCheck1">
-          Check me out
-        </label>
-      </div>
-      <button className="btn btn-primary"   onClick={()=>addPost(title)}>
-        Submit
-      </button>
-    </form>
+    <form className="input-post-form">
+
+  <div className="mb-3 input-post-group">
+    <label htmlFor="title" className="form-label">Title</label>
+    <input
+      value={title}
+      onChange={(e) => setTitle(e.target.value)}
+      type="text"
+      className="form-control input-post-input"
+      id="title"
+    />
+  </div>
+
+  <div className="mb-3 input-post-group">
+    <label htmlFor="body" className="form-label">Body</label>
+    <input
+      value={body}
+      onChange={(e) => setBody(e.target.value)}
+      type="text"
+      className="form-control input-post-input"
+      id="body"
+    />
+  </div>
+
+  <div className="mb-3 input-post-group">
+    <label htmlFor="reactions" className="form-label">Reactions</label>
+    <input
+      value={reactions}
+      onChange={(e) => setReactions(e.target.value)}
+      type="number"
+      className="form-control input-post-input"
+      id="reactions"
+    />
+  </div>
+
+  <div className="mb-3 input-post-group">
+    <label htmlFor="userId" className="form-label">UserId</label>
+    <input
+      value={userId}
+      onChange={(e) => setUserId(e.target.value)}
+      type="number"
+      className="form-control input-post-input"
+      id="userId"
+    />
+  </div>
+
+  <div className="mb-3 input-post-group">
+    <label htmlFor="tags" className="form-label">Tags</label>
+    <input
+      value={tags}
+      onChange={(e) => setTags(e.target.value)}
+      type="text"
+      className="form-control input-post-input"
+      id="tags"
+    />
+  </div>
+
+  <button className="btn btn-primary input-post-btn" onClick={() => addPost(title,body,reactions,userId,tags) }>
+    Submit
+  </button>
+
+</form>
+
   );
 };
 

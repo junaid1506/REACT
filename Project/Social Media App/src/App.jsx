@@ -17,7 +17,7 @@ function App() {
       <div className="content">
         <Header />
         <div className="main-content">
-      {currentNav === 'Home' ? <PostList /> :  <InputPost />}
+      {currentNav === 'Home' ? <PostList /> :  <InputPost setCurrentNav={setCurrentNav} />}
       </div>
         <Footer />
       </div>
