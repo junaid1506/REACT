@@ -127,7 +127,6 @@ const PostListProvide = ({ children }) => {
     >
       {children}
     </PostList.Provider>
-    
   );
 };
 
