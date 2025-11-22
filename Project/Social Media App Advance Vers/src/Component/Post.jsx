@@ -13,8 +13,8 @@ const {deletePost} = useContext(PostList)
         <p className="post-text">{item.body}</p>
 
         <div className="post-meta">
-          <span className="likes">{item.reactions} ❤</span>
-          <span className="tags">Tags: {item.tags}</span>
+          <span className="likes">{item.reactions.like} ❤</span>
+          <span className="tags">Tags: {item.tags.join(',')}</span>
         </div>
 
         <div className="post-buttons">

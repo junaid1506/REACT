@@ -9,9 +9,9 @@ const PostList = () => {
   const handleSubmit = () => {
     fetch("https://dummyjson.com/posts")
       .then((res) => res.json())
-      .then((res) =>(
-      addInitialPosts(res.post)
-      ));
+      .then(data=>(
+        addInitialPosts(data.posts)
+      ))
   };
 
   return (
