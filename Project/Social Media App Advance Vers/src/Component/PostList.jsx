@@ -1,25 +1,25 @@
-
 import Post from "./Post";
-import postList from "../Store/post-list-store";
 import { useContext } from "react";
-import {PostList as PostListContext} from "../Store/post-list-store";
+import { PostList as PostListContext } from "../Store/post-list-store";
 import EmptyMsg from "./EmptyMsg";
 
 const PostList = () => {
+  const { postList , addInitialPosts } = useContext(PostListContext);
 
- const {postList} =  useContext(PostListContext)
-  
+  const handleSubmit = () => {
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((res) =>(
+      addInitialPosts(res.post)
+      ));
+  };
+
   return (
     <>
-    {
-      postList.length === 0 && <EmptyMsg/>
-    }
-    {
-      postList.map(item=>(
-        <Post key={item.id}  item={item}/>
-      ))
-    }
-
+      {postList.length === 0 && <EmptyMsg onClickDataFetch={handleSubmit} />}
+      {postList.map((item) => (
+        <Post key={item.id} item={item} />
+      ))}
     </>
   );
 };

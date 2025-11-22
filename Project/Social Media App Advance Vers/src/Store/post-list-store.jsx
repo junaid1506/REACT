@@ -6,6 +6,7 @@ export const PostList = createContext({
   postList: [],
   addPost: () => {},
   deletePost: () => {},
+  addInitialPosts : ()=>{}
 });
 
 const postListReducer = (state, action) => {
@@ -25,6 +26,8 @@ const postListReducer = (state, action) => {
         },
         ...state,
       ];
+      case "ADD_INITIAL_PRODUCTS" : 
+        return state =  action.payload.posts
 
     default:
       return state;
@@ -67,6 +70,14 @@ const PostListProvide = ({ children }) => {
       },
     });
   };
+  let addInitialPosts = (posts) => {
+    dispatchPostList({
+      type: "ADD_INITIAL_PRODUCTS",
+      payload: {
+       posts
+      },
+    });
+  };
   let deletePost = (postId) => {
     dispatchPostList({
       type: "DELETE_POST",
@@ -82,6 +93,7 @@ const PostListProvide = ({ children }) => {
         postList,
         addPost,
         deletePost,
+        addInitialPosts
       }}
     >
       {children}
