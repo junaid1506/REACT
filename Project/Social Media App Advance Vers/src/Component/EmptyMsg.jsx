@@ -3,32 +3,28 @@ import "./empty-msg.css";
 
 const EmptyMsg = () => {
   return (
-    <div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="container my-5">
       {" "}
-      <div class="py-5">
+      <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
         {" "}
-        <h1 class="display-5 fw-bold text-white">Dark color hero</h1>{" "}
-        <div class="col-lg-6 mx-auto">
-          {" "}
-          <p class="fs-5 mb-4">
-            Quickly design and customize responsive mobile-first sites with
-            Bootstrap, the world’s most popular front-end open source toolkit,
-            featuring Sass variables and mixins, responsive grid system,
-            extensive prebuilt components, and powerful JavaScript plugins.
-          </p>{" "}
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            {" "}
-            <button
-              type="button"
-              class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"
-            >
-              Custom button
-            </button>{" "}
-            <button type="button" class="btn btn-outline-light btn-lg px-4">
-              Secondary
-            </button>{" "}
-          </div>{" "}
-        </div>{" "}
+        {/* <button
+          type="button"
+          class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill"
+          aria-label="Close"
+        ></button>{" "} */}
+        {/* <svg class="bi mt-5 mb-3" width="48" height="48" aria-hidden="true">
+          <use xlink:href="#check2-circle"></use>
+        </svg>{" "} */}
+        <h1 className="text-body-emphasis">Placeholder jumbotron</h1>
+        <p className="col-lg-6 mx-auto mb-4">
+          This faded back jumbotron is useful for placeholder content. It's also
+          a great way to add a bit of context to a page or section when no
+          content is available and to encourage visitors to take a specific
+          action.
+        </p>
+        <button class="btn btn-primary px-5 mb-5" type="button">
+          Call to action
+        </button>{" "}
       </div>{" "}
     </div>
   );
