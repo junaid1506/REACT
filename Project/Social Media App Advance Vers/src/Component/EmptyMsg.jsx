@@ -1,7 +1,7 @@
 import React from "react";
 import "./empty-msg.css";
 
-const EmptyMsg = ({onClickDataFetch}) => {
+const EmptyMsg = () => {
   return (
     <div className="container my-5">
       {" "}
@@ -12,9 +12,9 @@ const EmptyMsg = ({onClickDataFetch}) => {
           There are no posts available right now. Feel free to create a new
           post, or fetch the latest data to get started.
         </p>
-        <button className="btn btn-primary px-5 mb-5" type="button" onClick={onClickDataFetch}>
+        {/* <button className="btn btn-primary px-5 mb-5" type="button" onClick={onClickDataFetch}>
           Fetch The Post From Server
-        </button>{" "}
+        </button>{" "} */}
       </div>{" "}
     </div>
   );
