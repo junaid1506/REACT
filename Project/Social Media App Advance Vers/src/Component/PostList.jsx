@@ -12,11 +12,6 @@ const PostList = () => {
       .then((data) => addInitialPosts(data.posts));
   },[])
 
-
-   
-   
-  
-
   return (
     <>
       {postList.length === 0 && <EmptyMsg />}
