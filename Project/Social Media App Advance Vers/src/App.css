@@ -13,3 +13,8 @@
   align-items: center;
   /* justify-content: center; */
 }
+.my-spinner{
+  margin: 40vh 30vw;
+  height: 150px !important;
+  width: 150px !important;
+}
