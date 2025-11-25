@@ -15,9 +15,6 @@ function MainTime(){
     clearInterval(inetrValId)
   }
 
-
-
-
  },[])
 
   return(
