@@ -5,29 +5,13 @@ import EmptyMsg from "./EmptyMsg";
 import LoadingSpiner from "./LoadingSpiner";
 
 const PostList = () => {
-  const { postList, addInitialPosts } = useContext(PostListContext);
-  const [feteching, setFetching] = useState(false);
-
-  useEffect(() => {
-    console.log('fetch start ')
-    setFetching(true);
-    fetch("https://dummyjson.com/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-        setFetching(false);
-        console.log('fetch return ')
-      });
-      console.log('fetch end ')
-  }, []);
+  const { postList, feteching } = useContext(PostListContext);
 
   return (
     <>
-    {feteching && <LoadingSpiner/>}
+      {feteching && <LoadingSpiner />}
       {!feteching && postList.length === 0 && <EmptyMsg />}
-      {!feteching && postList.map((item) => (
-        <Post key={item.id} item={item} />
-      ))}
+      {!feteching && postList.map((item) => <Post key={item.id} item={item} />)}
     </>
   );
 };
