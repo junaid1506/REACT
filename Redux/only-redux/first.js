@@ -5,5 +5,8 @@ const reducer =  (store,action)=>{
 const store = redux.createStore(reducer)
 
 const subcriber = ()=>{
-  
+  const state =  store.getState()
+  console.log(state)
 }
+
+store.subscribe(subcriber)
