@@ -12,10 +12,28 @@ const InputPost = ({ setCurrentNav }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addPost(title, body, reactions, userId, tags);
+
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: title,
+        body: body,
+        reactions: reactions,
+        userId: userId,
+        tags: tags.split(" "),
+
+        /* other post data */
+      }),
+    })
+      .then((res) => res.json())
+      .then((post) => addPost(post));
+    // .then((posts) => addPost(title, body, reactions, userId, tags));
+
+    // addPost(title, body, reactions, userId, tags);
     setCurrentNav("Home");
     window.scrollTo({
-      top: 0, 
+      top: 0,
       behavior: "smooth",
     });
   };
