@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const CounterDisplay = () => {
-  return <p className="lead mb-4">Counter current Value :</p>;
+  const counter = useSelector((store) => store.counter);
+  return <p className="lead mb-4">Counter current Value : {counter}</p>;
 };
 
 export default CounterDisplay;
