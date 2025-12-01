@@ -25,6 +25,7 @@ const counterStore = configureStore({
     counter : counterSlice.reducer
   }
 });
+
 export const counterAction =  counterSlice.actions
 export default counterStore;
 
