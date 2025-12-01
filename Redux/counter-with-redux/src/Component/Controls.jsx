@@ -36,13 +36,25 @@ const Controls = () => {
   return (
     <>
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button onClick={handleIncriment} type="button" class="btn btn-primary">
+        <button
+          onClick={handleIncriment}
+          type="button"
+          className="btn btn-primary"
+        >
           +1
         </button>
-        <button onClick={handleDecriment} type="button" class="btn btn-success">
+        <button
+          onClick={handleDecriment}
+          type="button"
+          className="btn btn-success"
+        >
           -1
         </button>
-        <button onClick={handlePrivacy} type="button" class="btn btn-warning">
+        <button
+          onClick={handlePrivacy}
+          type="button"
+          className="btn btn-warning"
+        >
           Privacy
         </button>
       </div>
@@ -53,10 +65,10 @@ const Controls = () => {
           className="inout-number"
           ref={inputElement}
         />
-        <button onClick={handleAdd} type="button" class="btn btn-info">
+        <button onClick={handleAdd} type="button" className="btn btn-info">
           Add
         </button>
-        <button onClick={handleSub} type="button" class="btn btn-danger">
+        <button onClick={handleSub} type="button" className="btn btn-danger">
           Sub
         </button>
       </div>
