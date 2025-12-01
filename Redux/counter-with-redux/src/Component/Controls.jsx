@@ -10,14 +10,23 @@ const Controls = () => {
     dispatch({ type: "DECREMENT" });
   };
   return (
-    <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button onClick={handleIncriment} type="button" class="btn btn-primary">
-        +1
-      </button>
-      <button onClick={handleDecriment} type="button" class="btn btn-success">
-        -1
-      </button>
-    </div>
+    <>
+      <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button onClick={handleIncriment} type="button" class="btn btn-primary">
+          +1
+        </button>
+        <button onClick={handleDecriment} type="button" class="btn btn-success">
+          -1
+        </button>
+      </div>
+      <div className="d-grid gap-2 d-sm-flex justify-content-sm-center margin10">
+        <input type="text" placeholder="Enter number"  className="
+        "/>
+        <button onClick={handleDecriment} type="button" class="btn btn-info">
+          Add
+        </button>
+      </div>
+    </>
   );
 };
 
