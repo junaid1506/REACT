@@ -1,14 +1,15 @@
 import React, { useRef } from "react";
+import { counterAction } from "../Store";
 import { useDispatch } from "react-redux";
 
 const Controls = () => {
-  const inputElement = useRef();
   const dispatch = useDispatch();
+  const inputElement = useRef();
   const handleIncriment = () => {
-    dispatch({ type: "INCRIMENT" });
+    dispatch(counterAction.incriment());
   };
   const handleDecriment = () => {
-    dispatch({ type: "DECREMENT" });
+    dispatch(counterAction.decriment());
   };
   const handleAdd = () => {
     dispatch({
