@@ -17,9 +17,6 @@ const counterSlice = createSlice({
   }
 })
 
-
-
-
 const counterStore = configureStore({
   reducer :{
     counter : counterSlice.reducer
