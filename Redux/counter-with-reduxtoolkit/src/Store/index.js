@@ -1,5 +1,5 @@
 // import { createStore } from "redux";
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import counterSlice from "./counter";
 import privacyToggle from "./privacy";
 const counterStore = configureStore({
