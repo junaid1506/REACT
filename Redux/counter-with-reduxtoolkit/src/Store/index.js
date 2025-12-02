@@ -12,7 +12,9 @@ const counterSlice = createSlice({
     decriment : (state,action)=>{
       state.counterVal--
     },
-    add : (state,action)=>{},
+    add : (state,action)=>{
+      
+    },
     sub : (state,action)=>{},
   }
 })

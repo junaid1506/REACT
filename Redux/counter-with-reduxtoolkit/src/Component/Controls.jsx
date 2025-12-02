@@ -12,12 +12,12 @@ const Controls = () => {
     dispatch(counterAction.decriment());
   };
   const handleAdd = () => {
-    dispatch({
-      type: "ADD",
-      payload: {
+    dispatch(
+      counterAction.add({
         num: Number(inputElement.current.value),
-      },
-    });
+      })
+    );
+
     inputElement.current.value = "";
   };
   const handleSub = () => {
