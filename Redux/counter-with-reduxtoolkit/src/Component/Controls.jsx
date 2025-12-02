@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { counterAction } from "../Store";
+import { counterAction, privacyAction } from "../Store";
 import { useDispatch } from "react-redux";
 
 const Controls = () => {
@@ -12,27 +12,20 @@ const Controls = () => {
     dispatch(counterAction.decriment());
   };
   const handleAdd = () => {
-    dispatch(
-      counterAction.add({
-        num: Number(inputElement.current.value),
-      })
-    );
+    dispatch(counterAction.add(Number(inputElement.current.value)));
 
     inputElement.current.value = "";
   };
   const handleSub = () => {
-    dispatch({
-      type: "SUB",
-      payload: {
-        num: Number(inputElement.current.value),
-      },
-    });
+    dispatch(counterAction.sub(Number(inputElement.current.value)));
     inputElement.current.value = "";
   };
   const handlePrivacy = () => {
-    dispatch({
-      type: "HANDLEPRIVACY",
-    });
+    dispatch(privacyAction.privacyHandle());
+
+    // dispatch({
+    //   type: "HANDLEPRIVACY",
+    // });
   };
   return (
     <>
