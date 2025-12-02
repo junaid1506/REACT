@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-// import { counterAction, privacyAction } from "../Store";
 import { useDispatch } from "react-redux";
 import { counterAction } from "../Store/counter";
 import { privacyAction } from "../Store/privacy";
