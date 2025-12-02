@@ -25,7 +25,7 @@ const privacyToggle = createSlice({
   initialState: false,
   reducers: {
     privacyHandle: (state, action) => {
-      state = !state;
+     return state = !state;
     },
   },
 });
