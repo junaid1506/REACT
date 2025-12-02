@@ -13,7 +13,7 @@ const counterSlice = createSlice({
       state.counterVal--
     },
     add : (state,action)=>{
-      
+      state.counterVal += Number(action.payload.num)
     },
     sub : (state,action)=>{},
   }
