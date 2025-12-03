@@ -34,27 +34,18 @@ const Header = () => {
       </div>
       <div className="action_bar">
         <div className="action_container">
-          <span>
-            {" "}
-            <CgProfile />
-          </span>
-
+          <CgProfile />
           <span className="action_name">Profile</span>
         </div>
 
         <div className="action_container">
-          <span>
-            {" "}
-            <FaRegHeart />
-          </span>
+          <FaRegHeart />
+
           <span className="action_name">Wishlist</span>
         </div>
 
         <a className="action_container" href="pages/bag.html">
-          <span>
-            {" "}
-            <MdOutlineShoppingCart />
-          </span>
+          <MdOutlineShoppingCart />
           <span className="action_name">Bag</span>
           <span className="bag-item-count">0</span>
         </a>
