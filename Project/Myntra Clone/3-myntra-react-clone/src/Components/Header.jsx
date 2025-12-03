@@ -1,4 +1,7 @@
 import React from "react";
+import { CgProfile } from "react-icons/cg";
+import { FaRegHeart } from "react-icons/fa";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 const Header = () => {
   return (
@@ -31,20 +34,26 @@ const Header = () => {
       </div>
       <div className="action_bar">
         <div className="action_container">
-          <span className="material-symbols-outlined action_icon">person</span>
+          <span>
+            {" "}
+            <CgProfile />
+          </span>
+
           <span className="action_name">Profile</span>
         </div>
 
         <div className="action_container">
-          <span className="material-symbols-outlined action_icon">
-            favorite
+          <span>
+            {" "}
+            <FaRegHeart />
           </span>
           <span className="action_name">Wishlist</span>
         </div>
 
         <a className="action_container" href="pages/bag.html">
-          <span className="material-symbols-outlined action_icon">
-            shopping_bag
+          <span>
+            {" "}
+            <MdOutlineShoppingCart />
           </span>
           <span className="action_name">Bag</span>
           <span className="bag-item-count">0</span>
