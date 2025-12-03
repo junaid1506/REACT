@@ -2,6 +2,7 @@ import React from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -44,11 +45,11 @@ const Header = () => {
           <span className="action_name">Wishlist</span>
         </div>
 
-        <a className="action_container" href="pages/bag.html">
+        <Link className="action_container" to="/bag">
           <MdOutlineShoppingCart />
           <span className="action_name">Bag</span>
           <span className="bag-item-count">0</span>
-        </a>
+        </Link>
       </div>
     </header>
   );
