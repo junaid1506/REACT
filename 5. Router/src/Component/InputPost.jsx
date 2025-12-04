@@ -3,7 +3,7 @@ import { PostList } from "../Store/post-list-store";
 import "./inputpost.css";
 import { useNavigate } from "react-router-dom";
 
-const InputPost = ({ setCurrentNav }) => {
+const InputPost = () => {
   const { addPost } = useContext(PostList);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -28,11 +28,14 @@ const InputPost = ({ setCurrentNav }) => {
       }),
     })
       .then((res) => res.json())
-      .then((post) => addPost(post));
+      .then((post) => {
+        addPost(post);
+        navigate("/");
+      });
     // .then((posts) => addPost(title, body, reactions, userId, tags));
 
     // addPost(title, body, reactions, userId, tags);
-    navigate("/");
+
     window.scrollTo({
       top: 0,
       behavior: "smooth",
