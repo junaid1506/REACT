@@ -1,5 +1,5 @@
 import React from "react";
-import HomeItem from "./HomeItem";
+import HomeItem from "../Components/HomeItem";
 
 const Home = () => {
   const item = {

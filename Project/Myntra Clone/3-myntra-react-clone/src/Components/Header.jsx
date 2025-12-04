@@ -8,13 +8,13 @@ const Header = () => {
   return (
     <header>
       <div className="logo_container">
-        <a href="#">
+        <Link href="/">
           <img
             className="myntra_home"
             src="images/myntra_logo.webp"
             alt="Myntra Home"
           />
-        </a>
+        </Link>
       </div>
       <nav className="nav_bar">
         <a href="#">Men</a>
