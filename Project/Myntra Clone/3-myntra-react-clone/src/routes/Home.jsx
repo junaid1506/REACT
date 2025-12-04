@@ -1,7 +1,7 @@
 import React from "react";
 import HomeItem from "./HomeItem";
 
-const HomeItemList = () => {
+const Home = () => {
   const item = {
     id: "001",
     image: "../images/1.jpg",
@@ -26,4 +26,4 @@ const HomeItemList = () => {
   );
 };
 
-export default HomeItemList;
+export default Home;
