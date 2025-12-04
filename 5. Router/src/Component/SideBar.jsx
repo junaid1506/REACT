@@ -1,12 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SideBar = ({ currentNav, setCurrentNav }) => {
-  let NavHome = () => {
-    setCurrentNav("Home");
-  };
-  let NavCreatePost = () => {
-    setCurrentNav("Current Post");
-  };
+const SideBar = () => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
@@ -33,14 +28,7 @@ const SideBar = ({ currentNav, setCurrentNav }) => {
         {" "}
         <li className="nav-item">
           {" "}
-          <a
-            onClick={NavHome}
-            href="#"
-            className={`nav-link text-white ${
-              currentNav === "Home" && "active"
-            }`}
-            aria-current="page"
-          >
+          <Link to="/" className={`nav-link text-white`} aria-current="page">
             {" "}
             <svg
               className="bi pe-none me-2"
@@ -51,17 +39,11 @@ const SideBar = ({ currentNav, setCurrentNav }) => {
               <use xlinkHref="#home"></use>
             </svg>
             Home
-          </a>{" "}
+          </Link>{" "}
         </li>{" "}
         <li>
           {" "}
-          <a
-            onClick={NavCreatePost}
-            href="#"
-            className={`nav-link text-white ${
-              currentNav === "Current Post" && "active"
-            }`}
-          >
+          <Link to="create-post" className={`nav-link text-white`}>
             {" "}
             <svg
               className="bi pe-none me-2"
@@ -72,11 +54,9 @@ const SideBar = ({ currentNav, setCurrentNav }) => {
               <use xlinkHref="#speedometer2"></use>
             </svg>
             Create Post
-          </a>{" "}
+          </Link>{" "}
         </li>{" "}
       </ul>{" "}
-
-
     </div>
   );
 };

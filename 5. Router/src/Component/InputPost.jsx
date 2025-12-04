@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { PostList } from "../Store/post-list-store";
 import "./inputpost.css";
+import { useNavigate } from "react-router-dom";
 
 const InputPost = ({ setCurrentNav }) => {
   const { addPost } = useContext(PostList);
@@ -9,7 +10,7 @@ const InputPost = ({ setCurrentNav }) => {
   const [reactions, setReactions] = useState("");
   const [userId, setUserId] = useState("");
   const [tags, setTags] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,7 +32,7 @@ const InputPost = ({ setCurrentNav }) => {
     // .then((posts) => addPost(title, body, reactions, userId, tags));
 
     // addPost(title, body, reactions, userId, tags);
-    setCurrentNav("Home");
+    navigate("/");
     window.scrollTo({
       top: 0,
       behavior: "smooth",

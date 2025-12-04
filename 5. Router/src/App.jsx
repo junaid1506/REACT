@@ -6,22 +6,23 @@ import InputPost from "./Component/InputPost";
 import PostList from "./Component/PostList";
 import SideBar from "./Component/SideBar";
 import PostListProvide from "./Store/post-list-store";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [currentNav, setCurrentNav] = useState('Home')
+  const [currentNav, setCurrentNav] = useState("Home");
 
   return (
     <PostListProvide>
-    <div className="app-container">
-      <SideBar currentNav={currentNav} setCurrentNav={setCurrentNav}    />
-      <div className="content">
-        <Header />
-        <div className="main-content">
-      {currentNav === 'Home' ? <PostList /> :  <InputPost setCurrentNav={setCurrentNav} />}
+      <div className="app-container">
+        <SideBar currentNav={currentNav} setCurrentNav={setCurrentNav} />
+        <div className="content">
+          <Header />
+          <div className="main-content">
+            <Outlet />
+          </div>
+          <Footer />
+        </div>
       </div>
-        <Footer />
-      </div>
-    </div>
     </PostListProvide>
   );
 }
