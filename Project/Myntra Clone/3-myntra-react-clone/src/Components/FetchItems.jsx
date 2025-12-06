@@ -1,11 +1,14 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
 const FetchItems = () => {
- const fetchStatus = useSelector((store) => store.fetchStatus)
+  const fetchStatus = useSelector((store) => store.fetchStatus);
   return (
-    <div>FetchItems</div>
-  )
-}
+    <div>
+      Fetch Done : {fetchStatus.fetchDone}
+      Currently Fetching :{fetchStatus.currentlyFetching}
+    </div>
+  );
+};
 
-export default FetchItems
+export default FetchItems;
