@@ -13,8 +13,10 @@ const fetchStatusSlice = createSlice({
     markFetchingStarted :(store,action)=>{
       return store
     },
-    markFetchingFinised
+    markFetchingFinised : (store,action)=>{
+      return store
+    }
   },
 });
 export const fetchStatusAction = fetchStatusSlice.actions;
-export default itemsSlice;
+export default fetchStatusSlice;
