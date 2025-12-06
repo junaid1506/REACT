@@ -123,7 +123,7 @@ const Defaultitems = [
 
 const itemsSlice = createSlice({
   name: "items",
-  initialState: [Defaultitems],
+  initialState: Defaultitems,
   reducers: {
     addIntialItem: (store) => {
       return store;
