@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { itemsAction } from "../store/itemSlice";
 
 const FetchItems = () => {
   const fetchStatus = useSelector((store) => store.fetchStatus);
@@ -11,9 +12,14 @@ const FetchItems = () => {
 
     fetch("http://localhost:8080/items", { signal })
       .then((res) => res.json())
-      .then((data) => {
-        dispatch();
+      .then(({ items }) => {
+        console.log(items);
+        dispatch(itemsAction.addIntialItem(items));
       });
+
+    return () => {
+      controller.abort();
+    };
   }, [fetchStatus]);
 
   return (
