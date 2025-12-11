@@ -32,5 +32,4 @@ const FetchItems = () => {
     </div>
   );
 };
-
 export default FetchItems;
