@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./routes/App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import HomeItemList from "./Components/HomeItemList.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Bag from "./routes/Bag.jsx";
 import Home from "./routes/Home.jsx";
 import { Provider } from "react-redux";
