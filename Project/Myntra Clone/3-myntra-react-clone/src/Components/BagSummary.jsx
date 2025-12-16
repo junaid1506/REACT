@@ -1,26 +1,36 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const BagSummary = () => {
-  const BagSummary = {
-    totalItem: 3,
-    totalMRP: 536,
-    totalDiscount: 66,
-    finalPayment: 473,
-  };
+  const bagIds = useSelector((store) => store.bag);
+  const allItems = useSelector((store) => store.items);
+  let totalItem = bagIds.length;
+  let totalMRP = 0;
+  let totalDiscount = 0;
+  const CONVENIENCE_FEES = 99;
+
+  const itemsInBag = allItems.filter((item) => {
+    const itemIndex = bagIds.indexOf(item.id);
+    return itemIndex >= 0;
+  });
+  itemsInBag.forEach((bagItem) => {
+    totalMRP += bagItem.original_price;
+    totalDiscount += bagItem.original_price - bagItem.current_price;
+  });
+
+  let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
   return (
     <>
       <div className="bag-details-container">
-        <div className="price-header">
-          PRICE DETAILS (${BagSummary.totalItem} Items){" "}
-        </div>
+        <div className="price-header">PRICE DETAILS ({totalItem} Items) </div>
         <div className="price-item">
           <span className="price-item-tag">Total MRP</span>
-          <span className="price-item-value">₹${BagSummary.totalMRP}</span>
+          <span className="price-item-value">₹{totalMRP}</span>
         </div>
         <div className="price-item">
           <span className="price-item-tag">Discount on MRP</span>
           <span className="price-item-value priceDetail-base-discount">
-            -₹${BagSummary.totalDiscount}
+            -₹{totalDiscount}
           </span>
         </div>
         <div className="price-item">
@@ -30,7 +40,7 @@ const BagSummary = () => {
         <hr />
         <div className="price-footer">
           <span className="price-item-tag">Total Amount</span>
-          <span className="price-item-value">₹${BagSummary.finalPayment}</span>
+          <span className="price-item-value">₹{finalPayment}</span>
         </div>
       </div>
       <button className="btn-place-order">

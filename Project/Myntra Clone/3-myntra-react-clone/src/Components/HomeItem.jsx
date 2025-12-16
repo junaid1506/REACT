@@ -24,7 +24,13 @@ const HomeItem = ({ item }) => {
       </div>
 
       {elementFound ? (
-        <button type="button" className="btn btn-danger btn-add-bag">
+        <button
+          onClick={() => {
+            dispatch(bagActions.removeFromBag(item.id));
+          }}
+          type="button"
+          className="btn btn-danger btn-add-bag"
+        >
           Remove <MdDelete />
         </button>
       ) : (
