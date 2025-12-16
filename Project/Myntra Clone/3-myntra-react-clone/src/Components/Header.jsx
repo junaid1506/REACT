@@ -2,9 +2,12 @@ import React from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const bagIds = useSelector((store) => store.bag);
+  const bagNum = bagIds.length;
   return (
     <header>
       <div className="logo_container">
@@ -48,7 +51,7 @@ const Header = () => {
         <Link className="action_container" to="/bag">
           <MdOutlineShoppingCart />
           <span className="action_name">Bag</span>
-          <span className="bag-item-count">0</span>
+          <span className="bag-item-count">{bagNum}</span>
         </Link>
       </div>
     </header>
